@@ -1,0 +1,18 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyid: LTAI4FvvVEWiTJ3GNJJqJnk7
+      keysecret: 9st82dv7EvFk9mTjYO1XXbM632fRbG
+      bucketname: edu-guli-1010

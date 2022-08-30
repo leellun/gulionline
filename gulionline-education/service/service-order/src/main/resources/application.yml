@@ -1,0 +1,50 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: service-order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/guili_edu?serverTimezone=GMT%2B8
+    username: root
+    password: liulun666
+    sentinel:
+      transport:
+        port: 8081
+        dashboard: localhost:8480
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 5
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+mybatis-plus:
+  mapper-locations: classpath:xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+feign:
+  hystrix:
+    enabled: true
+weixin:
+  pay:
+    #关联的公众号appid
+    appId: wxf913bfa3a2c7eeeb
+    #商户号
+    partner: 1543338551
+    #商户key
+    partnerKey: atguigu3b0kn9g5v426MKfHQH7X8rKwb
+    #回调地址
+    notifyUrl: http://imhelen.free.idcfengye.com/api/trade/weixin-pay/callback/notify

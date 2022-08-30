@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        namespace: 251bdaed-7ccb-4707-aa97-6ae4f6f72f3b
+        file-extension: yaml
+        refresh-enabled: true
+        name: service-statistics-dev
+
+  profiles:
+    active: dev
+  application:
+    name: service-statistics

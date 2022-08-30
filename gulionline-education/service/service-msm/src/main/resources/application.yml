@@ -1,0 +1,32 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: service-msm
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 5
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+#阿里云短信
+aliyun:
+  sms:
+    regionId: cn-hangzhou
+    keyId: LTAI4Fpb7bZepit9DSAAhc3V
+    keySecret: h3rDvtprh5dDu3qZ2o0kLOGkNCzHtY
+    templateCode: SMS_96695065
+    signName: 谷粒
